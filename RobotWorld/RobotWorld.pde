@@ -71,10 +71,13 @@ void draw() {
   
   if (world.target.met(world.robot.getX(), world.robot.getY()) == true) {
     // when position of the robot is same as the target
-    background(250); // color : grey 
-    textSize(60);
-    text("You Won", 150, 280);
-    noLoop();   
+    int randX = (int)random(world.getMaxX()-1);
+    int randY = (int)random(world.getMaxY()-1);
+    world.target = new Target(randX, randY);
+    world.target.draw();
+     
+    
+       
   }
 }
 
